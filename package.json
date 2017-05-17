@@ -19,6 +19,7 @@
     "async": "0.9.0",
     "current-executing-script": "0.1.3",
     "jitsi-meet-logger": "jitsi/jitsi-meet-logger",
+    "jquery": "^3.2.1",
     "jssha": "1.5.0",
     "retry": "0.6.1",
     "sdp-interop": "0.1.11",
@@ -50,13 +51,10 @@
   },
   "scripts": {
     "lint": "jshint . && eslint . && flow",
-    "postinstall": "webpack -p",
+    "build": "webpack -p",
     "test": "karma start karma.conf.js",
     "validate": "npm ls"
   },
-  "pre-commit": [
-    "lint"
-  ],
-  "main": "./index.js",
+  "main": "./lib-jitsi-meet.min.js",
   "license": "Apache-2.0"
 }

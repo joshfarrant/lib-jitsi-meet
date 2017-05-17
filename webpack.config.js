@@ -7,7 +7,13 @@ const webpack = require('webpack');
 const minimize
     = process.argv.indexOf('-p') !== -1
         || process.argv.indexOf('--optimize-minimize') !== -1;
-const plugins = [];
+const plugins = [
+    new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        jquery: 'jquery',
+    }),
+];
 
 if (minimize) {
     // While webpack will automatically insert UglifyJsPlugin when minimize is
